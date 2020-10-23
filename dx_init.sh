@@ -2,7 +2,7 @@
 # Script to initialise dx toolkit for uploading CP data to DNAnexus
 # DNAnexus auth token must be stored in dnanexus_token.txt and NOT in version control
 
-echo "Initialising dx"
+echo "Initialising required DNAnexus components"
 
 token=$(cat dnanexus_token.txt)
 
@@ -10,7 +10,6 @@ if [ -z "$token" ]; then
     echo "Token not found, ensure is in the same dir as dx_init.sh. Exiting now."
     exit 1
 fi
-
 
 if [ -n "$(find . -name 'dx-toolkit*.tar.gz')" ]; then
     # toolkit still tarred, unpack
@@ -23,10 +22,10 @@ if [ -n "$(find . -name 'dnanexus-upload-agent*.tar.gz')" ]; then
     # upload agent still tarred, unpack
     tar -xzf ./dnanexus-upload-agent*.tar.gz
     mv ./dnanexus-upload-agent*/ua ./ua
-    rm ./dnanexus-upload-agent*.tar.gz
+    rm ./dnanexus-upload-agent*
 fi
 
-
+# sources toolkit ready for use
 ./dx-toolkit/environment
 
 # export required env variables
