@@ -1,5 +1,5 @@
 # CP Upload
-Script to perform setup for uploading CP data to DNAnexus
+Script to perform setup for uploading Clinical Pool (CP) data to DNAnexus.
 
 ## What does this script do?
 Runs initialisation of dx-toolkit and dnanexus-upload-agent for uploading CP data to DNAnexus.
@@ -14,4 +14,14 @@ Run to initialise required DNAnexus components before uploading data.
 
 This requires the dnanexus_token.txt file to be added to the script directory.
 
+Initialise dx:
+`sh dx_init.sh`
+
+Upload data to DNAnexus:
+`./ua files_to_upload`
+
+Options for upload agent may be found [here][dx-url].
+
 ### This was made by EMEE GLH
+
+[dx-url]: https://documentation.dnanexus.com/user/objects/uploading-and-downloading-files/batch/upload-agent
