@@ -36,4 +36,4 @@ export DX_PROJECT_CONTEXT_ID=project-FqJ1xy84y2kyXKY70kQKJJzZ
 export DX_SECURITY_CONTEXT='{"auth_token_type": "bearer", "auth_token": "$token"}'
 
 echo "Initialisation complete."
-echo "Files may be uploaded to 002_CP project with the following command: ./ua --recursive dir_to_upload"
+echo "Files may be uploaded to 002_CP project with the following command: ./ua files_to_upload"
