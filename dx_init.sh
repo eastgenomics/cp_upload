@@ -4,29 +4,34 @@
 
 echo "Initialising required DNAnexus components"
 
-token=$(cat dnanexus_token.txt)
+path="/software/packages/cp_upload"
+
+token=$(cat $path/dnanexus_token.py)
 
 if [ -z "$token" ]; then
     echo "Token not found, ensure is in the same dir as dx_init.sh. Exiting now."
     exit 1
 fi
 
-if [ -n "$(find . -name 'dx-toolkit*.tar.gz')" ]; then
+# get just token from file from between quotes
+token=$(grep -oP '(?<=").*?(?=")' <<< "$token")
+
+if [ -n "$(find $path -name 'dx-toolkit*.tar.gz')" ]; then
     # toolkit still tarred, unpack
-    tar -xzf ./dx-toolkit*.tar.gz
-    rm ./dx-toolkit*.tar.gz
-    chmod -R a+x dx-toolkit
+    tar -xzf $path/dx-toolkit*.tar.gz
+    rm $path/dx-toolkit*.tar.gz
+    chmod -R a+x $path/dx-toolkit
 fi
 
-if [ -n "$(find . -name 'dnanexus-upload-agent*.tar.gz')" ]; then
+if [ -n "$(find $path -name 'dnanexus-upload-agent*.tar.gz')" ]; then
     # upload agent still tarred, unpack
-    tar -xzf ./dnanexus-upload-agent*.tar.gz
-    mv ./dnanexus-upload-agent*/ua ./ua
-    rm ./dnanexus-upload-agent*
+    tar -xzf $path/dnanexus-upload-agent*.tar.gz
+    mv $path/dnanexus-upload-agent*/ua ./ua
+    rm $path/dnanexus-upload-agent*
 fi
 
 # sources toolkit ready for use
-./dx-toolkit/environment
+$path/dx-toolkit/environment
 
 # export required env variables
 export DX_APISERVER_PROTOCOL=https
