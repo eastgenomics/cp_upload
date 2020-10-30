@@ -15,7 +15,7 @@ Run to initialise required DNAnexus components before uploading data.
 This requires the dnanexus_token.txt file to be added to the script directory.
 
 Initialise dx:
-`bash dx_init`
+`dx_init.sh`
 
 Single files may be uploaded to 002_CP project with the following command: `ua file_to_upload`
 
