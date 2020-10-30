@@ -27,7 +27,7 @@ if [ -n "$(find $path -name 'dnanexus-upload-agent*.tar.gz')" ]; then
     # upload agent still tarred, unpack
     tar -xzf $path/dnanexus-upload-agent*.tar.gz
     mv $path/dnanexus-upload-agent*/ua ./ua
-    rm $path/dnanexus-upload-agent*
+    rm -r $path/dnanexus-upload-agent*
 fi
 
 # sources toolkit ready for use
