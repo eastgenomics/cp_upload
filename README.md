@@ -18,9 +18,10 @@ Initialise dx:
 `bash dx_init`
 
 Single files may be uploaded to 002_CP project with the following command: `ua file_to_upload`
+
 Directories may be uploaded to 002_CP project with the following command: `ua /path_to_dir/run_folder`
 
-NOTE: do NOT include a '/' after the dir name or the contents of the dir will be uploaded to the root of the project.
+n.b: do NOT include a '/' after the dir name or the contents of the dir will be uploaded to the root of the project.
 
 Options for upload agent may be found [here][dx-url].
 
