@@ -4,8 +4,7 @@
 
 echo "Initialising required DNAnexus components"
 
-# path="/software/packages/cp_upload"
-path="/home/jethro/Projects/app_testing/cp_upload"
+path="/software/packages/cp_upload"
 
 token=$(cat $path/dnanexus_token.py)
 
