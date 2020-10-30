@@ -38,13 +38,13 @@ export DX_APISERVER_PROTOCOL=https
 export DX_APISERVER_HOST=api.dnanexus.com
 export DX_APISERVER_PORT=443
 export DX_PROJECT_CONTEXT_ID=project-FqJ1xy84y2kyXKY70kQKJJzZ
-export DX_SECURITY_CONTEXT='{"auth_token_type": "bearer", "auth_token": "$token"}'
+export DX_SECURITY_CONTEXT="{\"auth_token_type\": \"bearer\", \"auth_token\": \"$token\"}"
 
 echo "Initialisation complete."
 echo ""
 echo "Single files may be uploaded to 002_CP project with the following command: ua file_to_upload"
 echo "Directories may be uploaded to 002_CP project with the following command: ua /data/CP/run_folder"
-echo "NOTE: do NOT include a '/' after the dir name or the contents of the dir will be uploaded to the root of the project"
+echo "NOTE: do NOT include a '/' after the dir name or the contents of the dir will be uploaded to the root of the project!"
 echo ""
 echo "Documentation for the upload agent is available at:"
 echo "https://documentation.dnanexus.com/user/objects/uploading-and-downloading-files/batch/upload-agent"
