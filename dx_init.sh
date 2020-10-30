@@ -41,4 +41,7 @@ export DX_PROJECT_CONTEXT_ID=project-FqJ1xy84y2kyXKY70kQKJJzZ
 export DX_SECURITY_CONTEXT='{"auth_token_type": "bearer", "auth_token": "$token"}'
 
 echo "Initialisation complete."
-echo "Files may be uploaded to 002_CP project with the following command: ./ua files_to_upload"
+echo "Files may be uploaded to 002_CP project with the following command: ua files_to_upload"
+echo ""
+echo "Documentation for the upload agent is available at:"
+echo "https://documentation.dnanexus.com/user/objects/uploading-and-downloading-files/batch/upload-agent"
